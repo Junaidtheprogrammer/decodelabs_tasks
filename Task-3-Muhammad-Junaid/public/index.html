@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Synapse API operations dashboard for workflow signals.">
+    <meta name="theme-color" content="#07111f">
+    <title>Synapse | Database Workspace</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to dashboard</a>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Application navigation">
+        <a class="brand" href="#overview" aria-label="Synapse dashboard home">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span>Synapse</span>
+        </a>
+        <nav class="nav-list" aria-label="Dashboard sections">
+          <a class="nav-link active" href="#overview" aria-current="page"><span aria-hidden="true">01</span>Overview</a>
+          <a class="nav-link" href="#signals"><span aria-hidden="true">02</span>Signals</a>
+          <a class="nav-link" href="#activity"><span aria-hidden="true">03</span>Activity</a>
+          <a class="nav-link" href="/api" target="_blank"><span aria-hidden="true">↗</span>API map</a>
+        </nav>
+        <div class="sidebar-status">
+          <span class="status-orb" aria-hidden="true"></span>
+          <div><strong data-connection>Connecting...</strong><span>Project 03 · SQLite</span></div>
+        </div>
+      </aside>
+
+      <main id="main-content" class="main-content">
+        <header id="overview" class="topbar">
+          <div>
+            <p class="kicker">Command center / <span data-date></span></p>
+            <h1>Database workspace</h1>
+          </div>
+          <div class="topbar-actions">
+            <span class="latency-pill"><span aria-hidden="true"></span><span data-latency>--</span> ms</span>
+            <button class="refresh-button" type="button" data-refresh aria-label="Refresh dashboard data">Refresh data</button>
+          </div>
+        </header>
+
+        <section class="status-grid" aria-label="API health summary">
+          <article class="health-card primary-card">
+            <div class="card-heading"><span>Persistent storage</span><span class="live-label">SQLite</span></div>
+            <div class="pulse-visual" aria-hidden="true">
+              <svg viewBox="0 0 640 120" role="img">
+                <path class="pulse-grid" d="M0 30H640M0 60H640M0 90H640M80 0V120M160 0V120M240 0V120M320 0V120M400 0V120M480 0V120M560 0V120" />
+                <path class="pulse-path glow" d="M0 73H90L110 69L128 72L145 69L160 73H205L219 69L232 72L252 18L270 105L287 56L302 72H385L402 69L420 73L438 69L453 73H640" />
+                <path class="pulse-path" d="M0 73H90L110 69L128 72L145 69L160 73H205L219 69L232 72L252 18L270 105L287 56L302 72H385L402 69L420 73L438 69L453 73H640" />
+              </svg>
+            </div>
+            <div class="health-footer">
+              <div><span class="metric-value" data-total>—</span><span class="metric-label">Saved signals</span></div>
+              <div><span class="metric-value" data-writes>—</span><span class="metric-label">Committed changes</span></div>
+              <div><span class="metric-value good" data-db-state>—</span><span class="metric-label">Database connection</span></div>
+            </div>
+          </article>
+
+          <article class="health-card score-card">
+            <div class="card-heading"><span>Completion</span><span>All signals</span></div>
+            <div class="score-ring" data-completion-ring><span data-completion>0%</span></div>
+            <p>Signals resolved successfully</p>
+          </article>
+
+          <article class="health-card endpoint-card">
+            <div class="card-heading"><span>Database operations</span><span>CRUD</span></div>
+            <ul class="endpoint-list">
+              <li><span class="method get">GET</span><code>/api/tasks</code><span>200</span></li>
+              <li><span class="method post">POST</span><code>/api/tasks</code><span>201</span></li>
+              <li><span class="method patch">PATCH</span><code>/api/tasks/:id</code><span>200</span></li>
+              <li><span class="method delete">DELETE</span><code>/api/tasks/:id</code><span>204</span></li>
+            </ul>
+          </article>
+        </section>
+
+        <section id="signals" class="workspace-grid">
+          <div class="signals-panel panel">
+            <div class="panel-header">
+              <div><p class="kicker">Live resource</p><h2>Workflow signals</h2></div>
+              <button class="new-signal-button" type="button" data-open-form>+ New signal</button>
+            </div>
+
+            <div class="filters" role="group" aria-label="Filter workflow signals">
+              <label class="search-field"><span class="sr-only">Search signals</span><input type="search" placeholder="Search title, owner, or category" data-search></label>
+              <label><span class="sr-only">Filter by status</span><select data-status-filter><option value="">All statuses</option><option value="queued">Queued</option><option value="in-progress">In progress</option><option value="completed">Completed</option></select></label>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th scope="col">Signal</th><th scope="col">Owner</th><th scope="col">Priority</th><th scope="col">State</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+                <tbody data-task-list></tbody>
+              </table>
+              <div class="empty-state" data-empty hidden><strong>No signals found</strong><span>Adjust the filters or create a new signal.</span></div>
+            </div>
+            <div class="table-footer"><span data-result-count>Loading...</span><span>Data source: <code>GET /api/tasks</code></span></div>
+          </div>
+
+          <aside class="composer-panel panel" data-composer aria-labelledby="composer-title">
+            <div class="panel-header">
+              <div><p class="kicker">Saved to your database</p><h2 id="composer-title">Create signal</h2></div>
+              <button class="close-form" type="button" data-close-form aria-label="Close new signal form">×</button>
+            </div>
+            <form data-task-form novalidate>
+              <label>Signal title<input name="title" type="text" minlength="3" maxlength="80" placeholder="e.g. Review caching strategy" required></label>
+              <label>Owner<input name="owner" type="text" minlength="2" maxlength="50" placeholder="Team member" required></label>
+              <div class="form-row">
+                <label>Priority<select name="priority"><option value="medium">Medium</option><option value="high">High</option><option value="low">Low</option></select></label>
+                <label>Category<input name="category" type="text" maxlength="30" value="API" required></label>
+              </div>
+              <label>Status<select name="status"><option value="queued">Queued</option><option value="in-progress">In progress</option><option value="completed">Completed</option></select></label>
+              <button class="submit-button" type="submit"><span data-save-label>Save signal</span><span aria-hidden="true">↗</span></button>
+              <button class="refresh-button" type="button" data-cancel-edit hidden>Cancel edit</button>
+              <p class="form-feedback" data-form-feedback role="status"></p>
+            </form>
+            <div class="payload-preview" aria-hidden="true"><span>JSON payload</span><pre>{
+  <b>"status"</b>: <i>"queued"</i>,
+  <b>"priority"</b>: <i>"medium"</i>
+}</pre></div>
+          </aside>
+        </section>
+
+        <section id="activity" class="activity-panel panel" aria-labelledby="activity-title">
+          <div class="panel-header"><div><p class="kicker">Committed changes</p><h2 id="activity-title">Recent activity</h2></div><span class="secure-label">Persistent audit history</span></div>
+          <ol class="activity-list" data-activity-list>
+            <li>Loading saved activity...</li>
+          </ol>
+        </section>
+
+        <footer><span>Synapse Database / Project 03</span><span>Your signals stay saved between sessions.</span></footer>
+      </main>
+    </div>
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+  </body>
+</html>

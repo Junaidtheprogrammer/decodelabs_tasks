@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Atelier Form creates calm, enduring architecture shaped by landscape, light, and everyday life.">
+    <meta name="theme-color" content="#f2f0ea">
+    <title>Atelier Form | Architecture for slower living</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="#top" aria-label="Atelier Form home">
+          <span class="brand-mark" aria-hidden="true">AF</span>
+          <span>Atelier Form</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+
+        <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
+          <a href="#work">Selected work</a>
+          <a href="#approach">Approach</a>
+          <a href="#studio">Studio</a>
+          <a class="nav-cta" href="#contact">Start a project</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="top" class="hero" aria-labelledby="hero-title">
+        <img class="hero-image" src="assets/pavilion-hero.png" alt="Low concrete and timber pavilion beside still water at sunrise" width="1690" height="930">
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="shell hero-content">
+          <p class="eyebrow">Architecture &amp; spatial design</p>
+          <h1 id="hero-title">Spaces for<br>slower living.</h1>
+          <p class="hero-copy">We design thoughtful homes and gathering places where landscape, light, and everyday rituals belong together.</p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#work">Explore our work</a>
+            <a class="text-link text-link-light" href="#approach">How we design <span aria-hidden="true">&#8599;</span></a>
+          </div>
+        </div>
+        <div class="hero-index shell" aria-hidden="true">
+          <span>Based in the hills</span>
+          <span>35.14&deg; N / 33.92&deg; E</span>
+        </div>
+      </section>
+
+      <section id="work" class="section section-work" aria-labelledby="work-title">
+        <div class="shell">
+          <div class="section-heading heading-split">
+            <div>
+              <p class="eyebrow">Selected work / 2022-2026</p>
+              <h2 id="work-title">Built around<br>the way life moves.</h2>
+            </div>
+            <p>Each project begins with listening: to the site, to the weather, and to the people who will call it their own.</p>
+          </div>
+
+          <div class="filter-bar" role="toolbar" aria-label="Filter projects">
+            <button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="filter-button" data-filter="retreat" aria-pressed="false">Retreats</button>
+            <button type="button" class="filter-button" data-filter="home" aria-pressed="false">Homes</button>
+            <button type="button" class="filter-button" data-filter="public" aria-pressed="false">Public</button>
+            <span class="saved-count" aria-live="polite"><span data-saved-count>0</span> saved</span>
+          </div>
+          <p class="sr-only" data-filter-status aria-live="polite"></p>
+
+          <div class="project-grid">
+            <article class="project-card project-card-featured" data-category="retreat">
+              <div class="project-visual visual-pavilion">
+                <img src="assets/pavilion-hero.png" alt="Pavilion extending over a calm reflecting pool" loading="lazy" width="1690" height="930">
+                <span class="project-number">01</span>
+                <button class="save-button" type="button" data-save="stillwater" aria-pressed="false" aria-label="Save Stillwater Pavilion">
+                  <span aria-hidden="true">+</span>
+                </button>
+              </div>
+              <div class="project-meta">
+                <div>
+                  <h3>Stillwater Pavilion</h3>
+                  <p>Mountain retreat / Troodos</p>
+                </div>
+                <span>2026</span>
+              </div>
+            </article>
+
+            <article class="project-card" data-category="home">
+              <div class="project-visual visual-courtyard" aria-label="Abstract material study for a courtyard home">
+                <span class="visual-label">Light / Stone / Air</span>
+                <span class="project-number">02</span>
+                <button class="save-button" type="button" data-save="courtyard" aria-pressed="false" aria-label="Save Courtyard House">
+                  <span aria-hidden="true">+</span>
+                </button>
+              </div>
+              <div class="project-meta">
+                <div>
+                  <h3>Courtyard House</h3>
+                  <p>Family home / Limassol</p>
+                </div>
+                <span>2025</span>
+              </div>
+            </article>
+
+            <article class="project-card" data-category="public">
+              <div class="project-visual visual-library" aria-label="Abstract facade study for a coastal reading room">
+                <span class="visual-label">A room for everyone</span>
+                <span class="project-number">03</span>
+                <button class="save-button" type="button" data-save="reading-room" aria-pressed="false" aria-label="Save Coastal Reading Room">
+                  <span aria-hidden="true">+</span>
+                </button>
+              </div>
+              <div class="project-meta">
+                <div>
+                  <h3>Coastal Reading Room</h3>
+                  <p>Civic space / Paphos</p>
+                </div>
+                <span>2024</span>
+              </div>
+            </article>
+
+            <article class="project-card" data-category="retreat">
+              <div class="project-visual visual-forest" aria-label="Abstract timber screen study for a forest cabin">
+                <span class="visual-label">Shelter in rhythm</span>
+                <span class="project-number">04</span>
+                <button class="save-button" type="button" data-save="pine-cabin" aria-pressed="false" aria-label="Save Pine Fold Cabin">
+                  <span aria-hidden="true">+</span>
+                </button>
+              </div>
+              <div class="project-meta">
+                <div>
+                  <h3>Pine Fold Cabin</h3>
+                  <p>Forest retreat / Platres</p>
+                </div>
+                <span>2023</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="approach" class="section section-approach" aria-labelledby="approach-title">
+        <div class="shell approach-grid">
+          <div class="approach-intro">
+            <p class="eyebrow">Our approach</p>
+            <h2 id="approach-title">Less noise.<br>More meaning.</h2>
+            <p>We believe good architecture should feel inevitable: generous without excess, precise without feeling precious.</p>
+          </div>
+          <ol class="process-list">
+            <li>
+              <span>01</span>
+              <div><h3>Listen closely</h3><p>We map daily rituals, ambitions, climate, and the particular character of the place.</p></div>
+            </li>
+            <li>
+              <span>02</span>
+              <div><h3>Draw lightly</h3><p>We test simple ideas early, from spatial flow to daylight, materials, and long-term flexibility.</p></div>
+            </li>
+            <li>
+              <span>03</span>
+              <div><h3>Make carefully</h3><p>We work closely with craftspeople so every junction supports the whole experience.</p></div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="studio" class="section section-studio" aria-labelledby="studio-title">
+        <div class="shell studio-layout">
+          <div class="studio-panel">
+            <p class="eyebrow">The studio</p>
+            <h2 id="studio-title">Small by design.<br>Wide in perspective.</h2>
+            <p>Atelier Form is an independent architecture studio working across homes, retreats, and civic spaces. Our compact team stays close to every project from first sketch to final detail.</p>
+            <a class="text-link" href="#contact">Meet us through a conversation <span aria-hidden="true">&#8599;</span></a>
+          </div>
+          <dl class="studio-stats">
+            <div><dt>14</dt><dd>Completed spaces</dd></div>
+            <div><dt>08</dt><dd>Years in practice</dd></div>
+            <div><dt>03</dt><dd>Design disciplines</dd></div>
+            <div><dt>01</dt><dd>Shared point of view</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="contact" class="section section-contact" aria-labelledby="contact-title">
+        <div class="shell contact-grid">
+          <div>
+            <p class="eyebrow">Start a conversation</p>
+            <h2 id="contact-title">Have a place<br>in mind?</h2>
+            <p>Tell us where you are and what you hope to create. We usually reply within two working days.</p>
+          </div>
+
+          <form class="contact-form" data-contact-form novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required>
+                <span class="field-error" data-error-for="name"></span>
+              </div>
+              <div class="field">
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+                <span class="field-error" data-error-for="email"></span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="project-type">What are you planning?</label>
+              <select id="project-type" name="project-type" required>
+                <option value="">Choose a project type</option>
+                <option>New home</option>
+                <option>Renovation</option>
+                <option>Retreat or hospitality</option>
+                <option>Public or cultural space</option>
+                <option>Something else</option>
+              </select>
+              <span class="field-error" data-error-for="project-type"></span>
+            </div>
+            <div class="field">
+              <label for="message">A few details</label>
+              <textarea id="message" name="message" rows="4" placeholder="Location, timeline, and what matters most to you" required></textarea>
+              <span class="field-error" data-error-for="message"></span>
+            </div>
+            <button class="button button-dark" type="submit">Send enquiry <span aria-hidden="true">&#8599;</span></button>
+            <p class="form-status" data-form-status role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">AF</span><span>Atelier Form</span></a>
+        <div><p class="footer-label">Visit</p><p>12 Cedar Lane<br>Troodos, Cyprus</p></div>
+        <div><p class="footer-label">Write</p><a href="mailto:studio@atelierform.example">studio@atelierform.example</a><br><a href="tel:+35722000000">+357 22 000 000</a></div>
+        <div><p class="footer-label">Follow</p><a href="#work">Instagram</a><br><a href="#work">LinkedIn</a></div>
+      </div>
+      <div class="shell footer-bottom"><span>&copy; <span data-year></span> Atelier Form</span><a href="#top">Back to top &#8593;</a></div>
+    </footer>
+  </body>
+</html>

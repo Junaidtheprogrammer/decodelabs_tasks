@@ -1,0 +1,8 @@
+{
+  "name": "synapse-db",
+  "version": "3.0.0",
+  "private": true,
+  "description": "DecodeLabs Project 3: persistent SQLite CRUD dashboard",
+  "scripts": {"start": "node server.js", "dev": "node --watch server.js", "test": "node --test"},
+  "engines": {"node": ">=22.13.0"}
+}
