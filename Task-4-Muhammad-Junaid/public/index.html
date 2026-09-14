@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 4 - Integration Milestone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Full Stack Task Manager</h1>
+    <p>Project 4: Frontend & Backend Integration</p>
+  </header>
+
+  <main>
+    <div id="status-message" class="status-banner hidden" role="alert"></div>
+
+    <section class="card">
+      <h2>Add New Item</h2>
+      <form id="item-form">
+        <div class="form-group">
+          <label for="title">Title *</label>
+          <input type="text" id="title" name="title" placeholder="Enter item title..." required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" placeholder="Enter optional details..."></textarea>
+        </div>
+        <button type="submit" id="submit-btn">Add Item</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="section-header">
+        <h2>Items List</h2>
+        <button id="refresh-btn" class="btn-secondary">Refresh List</button>
+      </div>
+      <div id="loading-spinner" class="spinner hidden">Loading data...</div>
+      <ul id="items-list" class="items-list"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
